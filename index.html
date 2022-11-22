@@ -1,31 +1,49 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-        <style>
-        html,
-        body {
-          height: 100%;
-          width: 100%;
-          font-family: 'Roboto', sans-serif;
-          font-size: 64px;
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ich kan ni!</title>
+
+    <style>
+        .btn-secondary,
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            color: #333;
+            text-shadow: none; /* Prevent inheritance from `body` */
         }
 
-        .container {
-          align-items: center;
-          display: flex;
-          justify-content: center;
-          height: 100%;
-          width: 100%;
+        body {
+            text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
         }
-        </style>
-        <title></title>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <span>Ⅰ</span> <span>Ⅰ</span> <span>Ⅰ</span>
-            </div>
-        </div>
-    </body>
+    </style>
+    <script type="text/javascript">
+        const excuses = [
+            'Want ich moet mien erwten nog doppen.',
+            'Ich guy zoegezeet kuieren.',
+            'Hem komende tiejd al veul te dûn met da wk',
+            'Ich vuul mich dao nou veul te goed veur',
+            'Ich moet na e fisje',
+            'Ich moet zoegezeet bakke',
+        ];
+
+        const randomExcuse = () => excuses[Math.floor(Math.random() * excuses.length)];
+        const updateRandomExcuse = () => {
+            document.getElementById('excuse').innerHTML = randomExcuse();
+        }
+    </script>
+</head>
+<body class="d-flex h-100 text-center text-bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <main class="px-3">
+            <p class="lead">
+                <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white" onclick="updateRandomExcuse();">
+                    Ich kan ni!
+                </a>
+            </p>
+            <p class="lead" id="excuse"></p>
+
+        </main>
+    </div>
+</body>
 </html>
